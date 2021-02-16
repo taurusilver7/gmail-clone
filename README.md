@@ -1,3 +1,29 @@
+# Gmail Clone
+
+> an email application powered by react-redux with material-ui & flexbox styling.
+> Firebase is hosting, authorizing & acting as a realtime-database for the application.
+
+## About Gmail.
+
+- Gmail is a free email service developed by Google.
+- Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.
+- Gmail started as a limited beta release on April 1, 2004 and ended its testing phase on July 7, 2009.
+
+## Stock
+
+- [only logo](https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png)
+- [old logo+title](https://i02.appmifile.com/images/2019/05/25/65d91020-cff7-4ccd-b469-e5a5296e2e55.jpg)
+- [new logo+ title](https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-1-1.png)
+
+## Components
+
+- Header (logo, search, icons)
+- Sidebar
+- EmailList (EmailRow, Section components)
+- Mail
+
+- for the composing a mail, react-form-hook is implemented.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
