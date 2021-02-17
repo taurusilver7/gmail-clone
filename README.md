@@ -14,6 +14,7 @@
 - [only logo](https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png)
 - [old logo+title](https://i02.appmifile.com/images/2019/05/25/65d91020-cff7-4ccd-b469-e5a5296e2e55.jpg)
 - [new logo+ title](https://logodownload.org/wp-content/uploads/2018/03/gmail-logo-1-1.png)
+- [login-logo](https://www.gizmochina.com/wp-content/uploads/2020/10/Screenshot-145.png)
 
 ## Components
 
@@ -21,6 +22,12 @@
 - Sidebar
 - EmailList (EmailRow, Section components)
 - Mail
+- SendMail
+- Login
+
+## Authentication & Hosting.
+
+- the hosting is done using firebase, with real-time database from firestore & googleAuthProvider for authentication.
 
 - for the composing a mail, react-form-hook is implemented.
 
