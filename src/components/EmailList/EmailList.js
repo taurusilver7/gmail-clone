@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./EmailList.css";
 
 import EmailRow from "./EmailRow/EmailRow";
@@ -18,9 +18,24 @@ import InboxIcon from "@material-ui/icons/Inbox";
 import PeopleIcon from "@material-ui/icons/People";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import { useHistory } from "react-router-dom";
+import { db } from "../../firebase";
 
 const EmailList = () => {
   const history = useHistory();
+  const [mails, setMails] = useState([]);
+
+  useEffect(() => {
+    db?.collection("emails")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snap) =>
+        setMails(
+          snap?.docs.map((doc) => ({
+            id: doc?.id,
+            data: doc?.data(),
+          }))
+        )
+      );
+  }, []);
   return (
     <div onClick={() => history.push("/mail")} className="emailList">
       <div className="emailList__settings">
@@ -59,19 +74,16 @@ const EmailList = () => {
       </div>
 
       <div className="emailList__list">
-        <EmailRow
-          title="Twitch"
-          subject="Hello Fellow Viewers."
-          description="This is a test. pacl my bag with seven dozens of liqor jugs."
-          time="10:00 AM"
-        />
-
-        <EmailRow
-          title="Twitch"
-          subject="Hello Fellow Viewers."
-          description="This is a test.The quick brown fox jumped over the lazy dog. pack my bag with seven dozen of liquor jugs."
-          time="10:00 AM"
-        />
+        {mails.map(({id, data: {to, subject, message, timestamp}}) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
       </div>
     </div>
   );
