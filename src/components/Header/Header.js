@@ -8,12 +8,22 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { Avatar, IconButton } from "@material-ui/core";
 
-import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { logout, selectUser } from "../../features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../firebase";
 
 const Header = () => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -48,7 +58,7 @@ const Header = () => {
           <NotificationsIcon />
         </IconButton>
         <IconButton>
-          <AccountCircleIcon />
+          <Avatar src={user?.photoUrl} onClick={signOut} />
         </IconButton>
       </div>
     </div>
