@@ -36,9 +36,7 @@
 }
 
 .mail__bodyHeader > p {
-  padding: 10px;
-  margin-right: 20px;
-  overflow-wrap: break-word;
+  margin-left: 20px;
 }
 
 .mail__time {
@@ -51,6 +49,6 @@
 
 .mail__message > p {
   padding: 10px;
-  font-size: 14px;
-  color: rgb(110, 109, 109);
+  margin-right: 20px;
+  overflow-wrap: break-word;
 }
