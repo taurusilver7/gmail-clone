@@ -9,6 +9,10 @@
 - Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.
 - Gmail started as a limited beta release on April 1, 2004 and ended its testing phase on July 7, 2009.
 
+<p align='center'>
+	<img src='gmail.png' width='300' />
+</p>
+
 ## Stock
 
 - [only logo](https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png)
